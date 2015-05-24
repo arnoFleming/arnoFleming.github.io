@@ -80,7 +80,7 @@ memberships = current_user.firms.map &:enabled_memberships
 ```
 
 Sure as hell looks prettier in our controller. We reflect the business in our codebase. And it has
-the added benefit of pushing our decision making to the boundary of our application. That means
+the added benefit of pushing our decision making to the outer side of our application. That means
 that we can move and expand the last line from our previous example to our `Firm`.
 
 ```ruby

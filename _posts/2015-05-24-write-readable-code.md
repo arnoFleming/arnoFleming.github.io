@@ -34,7 +34,7 @@ It is an assignment that reads like this:
 
 
 ```ruby
-memberships = current_user.firms.map &:candidate_firm_members
+memberships = current_user.firms.map(&:candidate_firm_members)
 
 ```
 
@@ -44,10 +44,10 @@ OK, I go from an instance of a `user`, to a collection of `firms`, and I call th
 `candidate_firm_members` on each and every firm. But hey, it's a oneliner, and it has only 62
 characters.
 
-But what do we with the feature that our customer asked for? She makes millions of coins if we do
-not display all the candidate-firm-members, she needs to filter it so we only see the memberships
-that are enabled through some admin process?  Well, obviously, we leave the first line mostly as
-is, because we're still needing those members. We just add some filtering:
+But what do we do when our customer askes for a new feature? She makes millions of coins if we
+filter the result so we only see the memberships that are enabled through some admin process. Well,
+obviously, we leave the first line as is, because we're still needing those members. We just add
+that filtering:
 
 ```ruby
 memberships = current_user.firms.map(&:candidate_firm_members)
@@ -68,7 +68,7 @@ First, we give it some score:
 
 We know quite well what a `cfm` is. That's just a lazy way of writing `candidate_firm_member`. But
 if we would write it all out, our line would be way too long, and it would score a No on our 'does
-it looks nice'-test. Lets ignore that problem for now.
+it looks nice'-test. So lets ignore that problem for now.
 
 We'll focus on the complexity issue. In the first example, we got all the members of the firm. The
 feature clearly stated that we 'only see the memberships that are enabled' Why didn't we just write
@@ -81,7 +81,7 @@ memberships = current_user.firms.map &:enabled_memberships
 
 Sure as hell looks prettier in our controller. We reflect the business in our codebase. And it has
 the added benefit of pushing our decision making to the outer side of our application. That means
-that we can move and expand the last line from our previous example to our `Firm`.
+that we can move the last line of the previous example to our `Firm`, and expand it for readability.
 
 ```ruby
 def enabled_memberships

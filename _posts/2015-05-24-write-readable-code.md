@@ -67,7 +67,7 @@ First, we give it some score:
   * We have a nasty post-fixed `if` operator, easy to miss.
 
 We know quite well what a `cfm` is. That's just a lazy way of writing `candidate_firm_member`. But
-if we would write it all out, our line would be way too long, and it would score a No on our 'does
+if we would write it all out, our line would be way too long, and it would score a **No** on our 'does
 it looks nice'-test. So lets ignore that problem for now.
 
 We'll focus on the complexity issue. In the first example, we got all the members of the firm. The
